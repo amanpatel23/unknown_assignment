@@ -1,0 +1,101 @@
+# GRAPH SCHEMA
+
+
+"Defines type of config value."
+enum EnumConfigType {
+  "Defines config type is boolean"
+  BOOLEAN
+  "Defines config type is short text box"
+  TEXT
+  "Defines config type is large text area"
+  LARGE_TEXT
+  "Defines config type is Date and time"
+  DATETIME
+  "Defines config type is number"
+  NUMBER
+  "Defines config type is selection of choices"
+  SELECT
+}
+
+
+"config store for dynamic configs"
+type Config {
+  id: String
+  name: String
+  configType: EnumConfigType
+  value: String
+  selectOptions: [String]
+  createdAt: String
+  updatedAt: String
+}
+
+# node
+type HealthCheck {
+  isWorking: Boolean
+}
+
+type WithAuth {
+  listConfig(criteria: String, limit: Int, offset: Int): [Config]
+  getConfig(id: String!): Config
+}
+
+type MutateWithAuth {
+  del: DeleteEntityMutation
+  update: UpdateEntityMutation
+  fabricate: FabricateEntityMutation
+}
+
+type DeleteEntityMutation {
+  ###D START###
+  ###D END###
+  test: Boolean
+}
+
+type UpdateEntityMutation {
+  updateConfig(
+    id: String
+    name: String
+    configType: EnumConfigType
+    value: String
+    selectOptions: [String]
+    createdAt: String
+    updatedAt: String
+    createdBy: String
+    updatedBy: String
+  ): Config
+}
+
+type KvPair {
+  val: String
+  key: String
+}
+
+type FabricateEntityMutation {
+
+  createConfig(
+    name: String
+    configType: EnumConfigType
+    value: String
+    selectOptions: [String]
+    createdAt: String
+    updatedAt: String
+    createdBy: String
+    updatedBy: String
+  ): Config
+}
+
+type Query {
+  constant(value: String!): String
+  withAuth(token: String!): WithAuth
+  health: HealthCheck
+  enumOptions(name: String!): [KvPair]
+}
+
+type Mutation {
+  mutationWithAuth(token: String!): MutateWithAuth
+}
+
+input KvPairInput {
+  val: String
+  key: String
+}

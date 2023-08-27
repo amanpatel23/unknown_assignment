@@ -1,0 +1,15 @@
+.inner {
+    padding: 14px;
+}
+
+.btn_grp {
+    display: flex;
+}
+
+.action_btn {
+    margin-bottom: 14px;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: bold;
+    margin-right: 14px;
+}

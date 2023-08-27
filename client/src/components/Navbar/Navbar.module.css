@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+}
+
+.logo img {
+  width: 100px; /* Adjust as needed */
+}
+
+.logo_text {
+  color: #f2f2f2;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #f39c12;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.link:hover {
+  background-color: #e67e22;
+}
+
+.logout_btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

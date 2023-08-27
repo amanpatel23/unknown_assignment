@@ -1,0 +1,52 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    width: 550px;
+  }
+  
+  .cardContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .email {
+    font-weight: bold;
+  }
+  
+  .status {
+    color: #555;
+  }
+  
+  .cardButtons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .removeButton,
+  .testButton {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .testButton {
+    background-color: #3498db;
+  }
+  
+  .removeButton:hover,
+  .testButton:hover {
+    background-color: #c0392b;
+  }
+  

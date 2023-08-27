@@ -1,0 +1,10 @@
+.outer h2 {
+    margin-bottom: 8px;
+}
+
+.outer {
+    background: #ccc;
+    width: 250px;
+    padding: 8px;
+    margin-bottom: 14px;
+  }
